@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/hooks/useAuth';
+import { useSongs } from '@/hooks/useSongs';
 
 interface SongProps {
   song: {
@@ -15,25 +17,24 @@ interface SongProps {
 
 export default function SongCard({ song }: SongProps) {
   const router = useRouter();
+  const { isAuthenticated } = useAuth();
+  const { playSong, likeSong } = useSongs();
   const [isHovered, setIsHovered] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   
-  const handlePlay = () => {
-    if (!isLoggedIn) {
-      router.push('/login');
-      return;
+  const handlePlay = async () => {
+    const result = await playSong(song.id);
+    if (result.success) {
+      // Play song logic would go here
+      console.log(`Playing song: ${song.title}`);
     }
-    // Play song logic would go here
-    console.log(`Playing song: ${song.title}`);
   };
   
-  const handleLike = () => {
-    if (!isLoggedIn) {
-      router.push('/login');
-      return;
+  const handleLike = async () => {
+    const result = await likeSong(song.id);
+    if (result.success) {
+      // Handle successful like
+      console.log(`Liked song: ${song.title}`);
     }
-    // Like song logic would go here
-    console.log(`Liked song: ${song.title}`);
   };
 
   return (

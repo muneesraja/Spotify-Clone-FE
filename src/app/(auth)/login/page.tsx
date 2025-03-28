@@ -2,18 +2,20 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
+import { useAuth } from '@/hooks/useAuth';
 
 export default function Login() {
-  const router = useRouter();
+  const { login, actionLoading, error } = useAuth();
+  const searchParams = useSearchParams();
+  const redirectUrl = searchParams.get('redirect');
+  
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would normally handle authentication
-    console.log('Login with:', email, password);
-    router.push('/');
+    await login({ email, password });
   };
 
   return (
@@ -24,7 +26,18 @@ export default function Login() {
             <h2 className="text-white text-3xl font-bold">Music <span className="text-primary">App</span></h2>
           </Link>
           <h2 className="text-2xl font-bold">Log in to your account</h2>
+          {redirectUrl && (
+            <p className="text-sm text-text-secondary mt-2">
+              You need to login to access this feature
+            </p>
+          )}
         </div>
+
+        {error && (
+          <div className="bg-red-500/20 border border-red-500 p-3 rounded-md text-white text-sm">
+            {error}
+          </div>
+        )}
 
         <form onSubmit={handleLogin} className="mt-8 space-y-6">
           <div className="space-y-4">
@@ -41,6 +54,7 @@ export default function Login() {
                 placeholder="Email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                disabled={actionLoading}
               />
             </div>
             <div>
@@ -56,6 +70,7 @@ export default function Login() {
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                disabled={actionLoading}
               />
             </div>
           </div>
@@ -63,9 +78,18 @@ export default function Login() {
           <div>
             <button
               type="submit"
-              className="w-full flex justify-center py-3 px-4 bg-primary hover:bg-primary-dark text-white font-bold rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+              disabled={actionLoading}
+              className="w-full flex justify-center py-3 px-4 bg-primary hover:bg-primary-dark text-white font-bold rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-70 disabled:cursor-not-allowed"
             >
-              Log in
+              {actionLoading ? (
+                <>
+                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Logging in...
+                </>
+              ) : 'Log in'}
             </button>
           </div>
         </form>

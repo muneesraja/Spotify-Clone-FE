@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import AuthInitializer from "@/components/auth/AuthInitializer";
 
 export const metadata: Metadata = {
   title: "Music App",
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-background text-text-primary">
+        <AuthInitializer />
         {children}
       </body>
     </html>
