@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #f1f1f1;
+  --background: #121212;
+  --primary: #1db954;
+  --primary-hover: #1ed760;
+  --secondary: #b3b3b3;
+  --card-bg: #181818;
+  --card-hover: #282828;
+  --sidebar-bg: #000000;
+  --surface: #282828;
+  --surface-low: #181818;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-disabled: #727272;
+  --black: #000000;
+  --white: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-primary: var(--primary);
+  --color-surface: var(--surface);
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.main-content {
+  height: calc(100vh - 90px);
+  overflow-y: auto;
+}
+
+.sidebar {
+  background-color: var(--sidebar-bg);
+}
+
+.player-bar {
+  background-color: var(--black);
+  border-top: 1px solid #282828;
+  height: 90px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.card:hover {
+  background-color: var(--card-hover);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+  border: 3px solid var(--background);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+.gradient-background {
+  background: linear-gradient(180deg, rgba(150, 50, 250, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
 }
