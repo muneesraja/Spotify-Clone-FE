@@ -6,7 +6,7 @@ export function NavigationButtons() {
   const router = useRouter();
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="hidden md:flex items-center gap-2">
       <button 
         onClick={() => router.back()}
         className="bg-black/40 rounded-full p-2 hover:bg-black/60"

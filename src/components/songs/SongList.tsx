@@ -27,7 +27,7 @@ export function SongList({ initialSongs }: SongListProps) {
       <div className="flex justify-end mb-6">
         <SongSort songs={songs} onSortedSongs={setSongs} />
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {songs.map(song => (
           <SongCard key={song.id} song={song as unknown as Song & { artist: Artist }} />
         ))}

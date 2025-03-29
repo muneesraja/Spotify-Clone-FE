@@ -20,7 +20,7 @@ export default async function Home() {
   ]);
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       <section>
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold">Trending songs</h2>
@@ -28,7 +28,7 @@ export default async function Home() {
             Show all
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+        <div className="flex overflow-x-auto space-x-4 pb-4">
           {trendingSongs.map((song: Song & { artist: Artist }) => (
             <SongCard key={song.id} song={song} />
           ))}
@@ -42,7 +42,7 @@ export default async function Home() {
             Show all
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+        <div className="flex overflow-x-auto space-x-4 pb-4">
           {popularArtists.map((artist: Artist) => (
             <ArtistCard key={artist.id} artist={artist} />
           ))}
@@ -56,9 +56,9 @@ export default async function Home() {
             Show all
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-          {popularAlbums.map((album: Album) => (
-            <AlbumCard key={album.id} artist={album.artist} album={album} />
+        <div className="flex overflow-x-auto space-x-4 pb-4">
+          {popularAlbums.map((album: Album & { artist?: Artist }) => (
+            <AlbumCard key={album.id} album={album} />
           ))}
         </div>
       </section>

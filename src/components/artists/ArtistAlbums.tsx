@@ -49,24 +49,26 @@ export function ArtistAlbums({ artist, albums }: ArtistAlbumsProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         {sortedAlbums.map((album) => (
           <Link 
             key={album.id} 
             href={`/albums/${album.id}`}
-            className="group bg-[#282828] p-4 rounded-md hover:bg-[#333] transition-colors"
+            className="group bg-[#282828] p-4 rounded-md hover:bg-[#333] transition-colors flex flex-col"
           >
-            <div className="aspect-square mb-4 rounded-md overflow-hidden">
+            <div className="aspect-square mb-4 rounded-md overflow-hidden flex-shrink-0">
               <img
                 src={album.imageUrl || 'https://picsum.photos/seed/album/300/300'}
                 alt={album.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform"
               />
             </div>
-            <h3 className="font-medium mb-1 truncate">{album.title}</h3>
-            <p className="text-sm text-text-secondary">
-              {new Date(album.releaseDate).getFullYear()}
-            </p>
+            <div className="mt-auto">
+              <h3 className="font-medium mb-1 truncate">{album.title}</h3>
+              <p className="text-sm text-text-secondary">
+                {new Date(album.releaseDate).getFullYear()}
+              </p>
+            </div>
           </Link>
         ))}
       </div>

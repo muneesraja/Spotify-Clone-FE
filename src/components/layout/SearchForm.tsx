@@ -45,7 +45,7 @@ export function SearchForm() {
         </div>
         <input
           type="text"
-          className="bg-[#242424] text-white py-2 pl-10 pr-4 rounded-full focus:outline-none focus:ring-2 focus:ring-primary w-[300px]"
+          className="bg-[#242424] text-white py-2 pl-10 pr-4 rounded-full focus:outline-none focus:ring-2 focus:ring-primary w-full max-w-xs lg:max-w-sm"
           placeholder="What do you want to listen to?"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}

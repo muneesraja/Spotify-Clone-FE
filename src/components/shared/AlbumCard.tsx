@@ -7,7 +7,9 @@ import type { Album } from '@/api-types/models/Album';
 import type { Artist } from '@/api-types/models/Artist';
 
 interface AlbumProps {
-  album: Album;
+  album: Album & {
+     artist?: Artist;
+  };
 }
 
 export function AlbumCard({ album }: AlbumProps) {
@@ -15,7 +17,7 @@ export function AlbumCard({ album }: AlbumProps) {
 
   return (
     <div 
-      className="card group relative transition-all duration-300 hover:cursor-pointer" 
+      className="card group relative transition-all duration-300 hover:cursor-pointer w-40 flex-shrink-0" 
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -30,15 +32,14 @@ export function AlbumCard({ album }: AlbumProps) {
         </div>
         <h3 className="font-bold text-white mb-1 line-clamp-1">{album.title}</h3>
       </Link>
-      <button 
-        onClick={(e) => {
-          e.stopPropagation();
-          window.location.href = `/artists/${album.artistId}`;
-        }}
-        className="text-sm text-text-secondary line-clamp-2 text-left hover:underline"
-      >
-        {album.artist?.name || 'Unknown Artist'}
-      </button>
+      {album.artistId && (
+          <Link 
+            href={`/artists/${album.artistId}`} 
+            className="text-sm text-text-secondary line-clamp-2 text-left hover:underline"
+          >
+            {album.artist?.name || 'Unknown Artist'}
+          </Link>
+      )}
     </div>
   );
 }

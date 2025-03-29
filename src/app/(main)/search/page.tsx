@@ -49,7 +49,7 @@ function SearchResults({ query }: SearchResultsProps) {
       {hasSongs && (
         <section>
           <h2 className="text-xl font-bold mb-4">Songs</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
             {songs.map(song => (
               <SongCard key={song.id} song={song} />
             ))}
@@ -61,7 +61,7 @@ function SearchResults({ query }: SearchResultsProps) {
       {hasArtists && (
         <section>
           <h2 className="text-xl font-bold mb-4">Artists</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
             {artists.map(artist => (
               <ArtistCard key={artist.id} artist={artist} />
             ))}
@@ -72,7 +72,7 @@ function SearchResults({ query }: SearchResultsProps) {
       {hasAlbums && (
         <section>
           <h2 className="text-xl font-bold mb-4">Albums</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
             {albums.map(album => (
               <AlbumCard key={album.id} album={album} />
             ))}
@@ -87,7 +87,7 @@ function BrowseAll() {
   return (
     <div>
       <h1 className="text-2xl font-bold mb-6">Browse all</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
         {['Pop', 'Hip-Hop', 'Rock', 'Electronic', 'Indie', 'Jazz', 'Classical', 'R&B', 'Country', 'Metal'].map((genre, index) => (
           <div
             key={index}

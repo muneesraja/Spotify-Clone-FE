@@ -8,7 +8,11 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - Reusable component architecture
 - Authentication flow (login/signup)
 - Home page displaying music content (trending songs, popular artists, albums)
-- Search functionality
+- Migrated key routes (Songs, Artists, Albums, Search) to Next.js Server Components for improved performance.
+- Implemented Server Actions for data fetching and mutations.
+- Search functionality with real-time updates and debouncing.
+- Liked songs functionality with global state management (e.g., Jotai or Context).
+- Display of artist/album details.
 - Music player interface
 
 ## Getting Started

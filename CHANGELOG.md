@@ -1,5 +1,28 @@
 # Changelog - Frontend
 
+## [2.0.0] - 2025-03-29
+
+### Added
+- Migrated `/songs`, `/artists`, `/albums`, and `/search` routes to Server Components.
+- Implemented Server Actions (`actions/songs.ts`, `actions/artists.ts`, `actions/albums.ts`) for data fetching (e.g., `getSongDetails`, `getArtistDetails`, `getAlbumDetails`).
+- Implemented `getLikedSongs` server action and integrated liked songs display in the library section.
+- Added global state management for liked songs (using Jotai/Context and `LikedSongsProvider`).
+- Added `QueryProvider` for `@tanstack/react-query` to manage client-side data fetching state (e.g., for search).
+- Refactored `(main)` layout to handle user authentication data fetching and pass props to `MainLayout`.
+- Implemented real-time search updates in `SearchForm` using debouncing.
+- Created specific components for nested routes (e.g., `AlbumSongs`, `ArtistAlbums`).
+
+### Changed
+- Refactored `Header` and `Sidebar` to accept `user` and `isAuthenticated` as props instead of fetching directly.
+- Updated `SongList` component to handle different artist data structures.
+- Modified `SearchPage` and `SearchResults` to handle `SearchResponseDto` and display songs, artists, and albums.
+
+### Fixed
+- Resolved various build errors related to Server/Client component boundaries.
+- Fixed type errors in `SongList` and search results display.
+- Corrected React Query setup by adding `QueryClientProvider`.
+- Addressed issues with data fetching and prop drilling for layout components.
+
 ## [1.0.0] - 2025-03-28
 
 ### Added

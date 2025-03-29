@@ -18,17 +18,22 @@ export function SongCard({ song, onLikeChange }: SongProps) {
   
   return (
     <div 
-      className="card group relative transition-all duration-300 hover:cursor-pointer" 
+      className="card group relative transition-all duration-300 hover:cursor-pointer w-40 flex-shrink-0" 
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative mb-4 rounded-md overflow-hidden">
         <img 
-          src={song.artist.imageUrl} 
+          src={song.imageUrl || song.artist.imageUrl} 
           alt={song.title} 
           className="w-full h-full aspect-square object-cover"
         />
-        <SongCardActions songId={song.id} isHovered={isHovered} onLikeChange={onLikeChange} isLiked={song.isLiked} />
+        <SongCardActions 
+          songId={song.id} 
+          isHovered={isHovered} 
+          onLikeChange={onLikeChange} 
+          isLiked={!!song.isLiked}
+        /> 
       </div>
       <Link href={`/songs/${song.id}`}>
         <h3 className="font-bold text-white mb-1 line-clamp-1">{song.title}</h3>
@@ -42,4 +47,4 @@ export function SongCard({ song, onLikeChange }: SongProps) {
       )}
     </div>
   );
-} 
+}

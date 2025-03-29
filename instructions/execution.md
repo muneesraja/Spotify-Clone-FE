@@ -1,0 +1,2 @@
+Only modify tailwind code we are only going to modify design/style, no logic should be touched for the below implementaion.
+- The nested pages like /albums /songs /artists /artists/:id /albums:id should follow the same max width, styling, mimimum 3 columns for cards as / route.
