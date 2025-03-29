@@ -1,0 +1,98 @@
+[
+  {
+      "id": "f40cc6b5-ebdc-41f3-acc9-d04e9c960667",
+      "title": "Blank Space",
+      "duration": 231,
+      "url": "https://example.com/music/blank-space.mp3",
+      "imageUrl": "https://i.scdn.co/image/ab67616d0000b273047eac333eff0be4abe32cbf",
+      "albumId": "29001d02-0aa9-488a-9474-a65b79106967",
+      "artistId": "dbdece00-02dd-4c01-b3fc-51320df1809a",
+      "isFeatured": true,
+      "releaseDate": "2014-11-10",
+      "createdAt": "2025-03-28T05:32:24.768Z",
+      "updatedAt": "2025-03-28T05:32:24.768Z",
+      "album": {
+          "id": "29001d02-0aa9-488a-9474-a65b79106967",
+          "title": "1989",
+          "imageUrl": "https://i.scdn.co/image/ab67616d0000b273047eac333eff0be4abe32cbf",
+          "releaseDate": "2014-10-27",
+          "artistId": "dbdece00-02dd-4c01-b3fc-51320df1809a",
+          "isFeatured": false,
+          "createdAt": "2025-03-28T05:32:24.756Z",
+          "updatedAt": "2025-03-28T05:32:24.756Z"
+      },
+      "artist": {
+          "id": "dbdece00-02dd-4c01-b3fc-51320df1809a",
+          "name": "Taylor Swift",
+          "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5a00969a4698c3bc19d84156",
+          "description": "American singer-songwriter",
+          "isFeatured": false,
+          "createdAt": "2025-03-28T05:32:24.746Z",
+          "updatedAt": "2025-03-28T05:32:24.746Z"
+      }
+  },
+  {
+      "id": "431a6f5e-53be-4459-ad11-131e91085fc7",
+      "title": "Shake It Off",
+      "duration": 219,
+      "url": "https://example.com/music/shake-it-off.mp3",
+      "imageUrl": "https://i.scdn.co/image/ab67616d0000b273047eac333eff0be4abe32cbf",
+      "albumId": "29001d02-0aa9-488a-9474-a65b79106967",
+      "artistId": "dbdece00-02dd-4c01-b3fc-51320df1809a",
+      "isFeatured": true,
+      "releaseDate": "2014-08-18",
+      "createdAt": "2025-03-28T05:32:24.770Z",
+      "updatedAt": "2025-03-28T05:32:24.770Z",
+      "album": {
+          "id": "29001d02-0aa9-488a-9474-a65b79106967",
+          "title": "1989",
+          "imageUrl": "https://i.scdn.co/image/ab67616d0000b273047eac333eff0be4abe32cbf",
+          "releaseDate": "2014-10-27",
+          "artistId": "dbdece00-02dd-4c01-b3fc-51320df1809a",
+          "isFeatured": false,
+          "createdAt": "2025-03-28T05:32:24.756Z",
+          "updatedAt": "2025-03-28T05:32:24.756Z"
+      },
+      "artist": {
+          "id": "dbdece00-02dd-4c01-b3fc-51320df1809a",
+          "name": "Taylor Swift",
+          "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5a00969a4698c3bc19d84156",
+          "description": "American singer-songwriter",
+          "isFeatured": false,
+          "createdAt": "2025-03-28T05:32:24.746Z",
+          "updatedAt": "2025-03-28T05:32:24.746Z"
+      }
+  },
+  {
+      "id": "9a406138-6db2-4577-beb3-90260eeb2ff0",
+      "title": "Style",
+      "duration": 231,
+      "url": "https://example.com/music/style.mp3",
+      "imageUrl": "https://i.scdn.co/image/ab67616d0000b273047eac333eff0be4abe32cbf",
+      "albumId": "29001d02-0aa9-488a-9474-a65b79106967",
+      "artistId": "dbdece00-02dd-4c01-b3fc-51320df1809a",
+      "isFeatured": false,
+      "releaseDate": "2015-02-13",
+      "createdAt": "2025-03-28T05:32:24.771Z",
+      "updatedAt": "2025-03-28T05:32:24.771Z",
+      "album": {
+          "id": "29001d02-0aa9-488a-9474-a65b79106967",
+          "title": "1989",
+          "imageUrl": "https://i.scdn.co/image/ab67616d0000b273047eac333eff0be4abe32cbf",
+          "releaseDate": "2014-10-27",
+          "artistId": "dbdece00-02dd-4c01-b3fc-51320df1809a",
+          "isFeatured": false,
+          "createdAt": "2025-03-28T05:32:24.756Z",
+          "updatedAt": "2025-03-28T05:32:24.756Z"
+      },
+      "artist": {
+          "id": "dbdece00-02dd-4c01-b3fc-51320df1809a",
+          "name": "Taylor Swift",
+          "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5a00969a4698c3bc19d84156",
+          "description": "American singer-songwriter",
+          "isFeatured": false,
+          "createdAt": "2025-03-28T05:32:24.746Z",
+          "updatedAt": "2025-03-28T05:32:24.746Z"
+      }
+  }
+]

@@ -3,6 +3,7 @@ export const endpoints = {
     login: '/auth/login',
     register: '/auth/register',
     logout: '/auth/logout',
+    profile: '/auth/user/profile',
   },
   songs: {
     list: '/songs',
@@ -15,6 +16,7 @@ export const endpoints = {
     list: '/artists',
     featured: '/artists/featured',
     details: (id: string) => `/artists/${id}`,
+    songs: (id: string) => `/artists/${id}/songs`,
   },
   albums: {
     list: '/albums',
@@ -22,7 +24,6 @@ export const endpoints = {
     details: (id: string) => `/albums/${id}`,
   },
   user: {
-    profile: '/auth/user/profile',
-    likedSongs: '/user/liked-songs',
+    likedSongs: '/users/me/liked-songs',
   },
 }; 

@@ -1,22 +1,23 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
-import { useAuth } from '@/hooks/useAuth';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { login } from '@/app/actions/auth';
+import { useFormState } from 'react-dom';
+import { useEffect } from 'react';
 
 export default function Login() {
-  const { login, actionLoading, error } = useAuth();
+  const router = useRouter();
   const searchParams = useSearchParams();
   const redirectUrl = searchParams.get('redirect');
-  
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    await login({ email, password });
-  };
+  const [state, formAction] = useFormState(login, null);
+
+  useEffect(() => {
+    if (state?.success) {
+      router.push(redirectUrl || '/');
+      router.refresh(); // Refresh to update the client-side router state
+    }
+  }, [state, router, redirectUrl]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#121212] text-white p-4">
@@ -33,13 +34,13 @@ export default function Login() {
           )}
         </div>
 
-        {error && (
+        {state?.message && (
           <div className="bg-red-500/20 border border-red-500 p-3 rounded-md text-white text-sm">
-            {error}
+            {state.message}
           </div>
         )}
 
-        <form onSubmit={handleLogin} className="mt-8 space-y-6">
+        <form action={formAction} className="mt-8 space-y-6">
           <div className="space-y-4">
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-text-secondary mb-1">
@@ -52,9 +53,6 @@ export default function Login() {
                 required
                 className="w-full px-4 py-3 bg-[#242424] border border-[#333] rounded-md focus:ring-primary focus:border-primary text-white"
                 placeholder="Email address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                disabled={actionLoading}
               />
             </div>
             <div>
@@ -68,9 +66,6 @@ export default function Login() {
                 required
                 className="w-full px-4 py-3 bg-[#242424] border border-[#333] rounded-md focus:ring-primary focus:border-primary text-white"
                 placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                disabled={actionLoading}
               />
             </div>
           </div>
@@ -78,18 +73,9 @@ export default function Login() {
           <div>
             <button
               type="submit"
-              disabled={actionLoading}
-              className="w-full flex justify-center py-3 px-4 bg-primary hover:bg-primary-dark text-white font-bold rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full flex justify-center py-3 px-4 bg-primary hover:bg-primary-dark text-white font-bold rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
             >
-              {actionLoading ? (
-                <>
-                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                  Logging in...
-                </>
-              ) : 'Log in'}
+              Log in
             </button>
           </div>
         </form>
