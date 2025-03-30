@@ -1,98 +1,897 @@
-[
-  {
-      "id": "f40cc6b5-ebdc-41f3-acc9-d04e9c960667",
-      "title": "Blank Space",
-      "duration": 231,
-      "url": "https://example.com/music/blank-space.mp3",
-      "imageUrl": "https://i.scdn.co/image/ab67616d0000b273047eac333eff0be4abe32cbf",
-      "albumId": "29001d02-0aa9-488a-9474-a65b79106967",
-      "artistId": "dbdece00-02dd-4c01-b3fc-51320df1809a",
-      "isFeatured": true,
-      "releaseDate": "2014-11-10",
-      "createdAt": "2025-03-28T05:32:24.768Z",
-      "updatedAt": "2025-03-28T05:32:24.768Z",
-      "album": {
-          "id": "29001d02-0aa9-488a-9474-a65b79106967",
-          "title": "1989",
-          "imageUrl": "https://i.scdn.co/image/ab67616d0000b273047eac333eff0be4abe32cbf",
-          "releaseDate": "2014-10-27",
-          "artistId": "dbdece00-02dd-4c01-b3fc-51320df1809a",
-          "isFeatured": false,
-          "createdAt": "2025-03-28T05:32:24.756Z",
-          "updatedAt": "2025-03-28T05:32:24.756Z"
-      },
-      "artist": {
-          "id": "dbdece00-02dd-4c01-b3fc-51320df1809a",
-          "name": "Taylor Swift",
-          "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5a00969a4698c3bc19d84156",
-          "description": "American singer-songwriter",
-          "isFeatured": false,
-          "createdAt": "2025-03-28T05:32:24.746Z",
-          "updatedAt": "2025-03-28T05:32:24.746Z"
-      }
-  },
-  {
-      "id": "431a6f5e-53be-4459-ad11-131e91085fc7",
-      "title": "Shake It Off",
-      "duration": 219,
-      "url": "https://example.com/music/shake-it-off.mp3",
-      "imageUrl": "https://i.scdn.co/image/ab67616d0000b273047eac333eff0be4abe32cbf",
-      "albumId": "29001d02-0aa9-488a-9474-a65b79106967",
-      "artistId": "dbdece00-02dd-4c01-b3fc-51320df1809a",
-      "isFeatured": true,
-      "releaseDate": "2014-08-18",
-      "createdAt": "2025-03-28T05:32:24.770Z",
-      "updatedAt": "2025-03-28T05:32:24.770Z",
-      "album": {
-          "id": "29001d02-0aa9-488a-9474-a65b79106967",
-          "title": "1989",
-          "imageUrl": "https://i.scdn.co/image/ab67616d0000b273047eac333eff0be4abe32cbf",
-          "releaseDate": "2014-10-27",
-          "artistId": "dbdece00-02dd-4c01-b3fc-51320df1809a",
-          "isFeatured": false,
-          "createdAt": "2025-03-28T05:32:24.756Z",
-          "updatedAt": "2025-03-28T05:32:24.756Z"
-      },
-      "artist": {
-          "id": "dbdece00-02dd-4c01-b3fc-51320df1809a",
-          "name": "Taylor Swift",
-          "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5a00969a4698c3bc19d84156",
-          "description": "American singer-songwriter",
-          "isFeatured": false,
-          "createdAt": "2025-03-28T05:32:24.746Z",
-          "updatedAt": "2025-03-28T05:32:24.746Z"
-      }
-  },
-  {
-      "id": "9a406138-6db2-4577-beb3-90260eeb2ff0",
-      "title": "Style",
-      "duration": 231,
-      "url": "https://example.com/music/style.mp3",
-      "imageUrl": "https://i.scdn.co/image/ab67616d0000b273047eac333eff0be4abe32cbf",
-      "albumId": "29001d02-0aa9-488a-9474-a65b79106967",
-      "artistId": "dbdece00-02dd-4c01-b3fc-51320df1809a",
-      "isFeatured": false,
-      "releaseDate": "2015-02-13",
-      "createdAt": "2025-03-28T05:32:24.771Z",
-      "updatedAt": "2025-03-28T05:32:24.771Z",
-      "album": {
-          "id": "29001d02-0aa9-488a-9474-a65b79106967",
-          "title": "1989",
-          "imageUrl": "https://i.scdn.co/image/ab67616d0000b273047eac333eff0be4abe32cbf",
-          "releaseDate": "2014-10-27",
-          "artistId": "dbdece00-02dd-4c01-b3fc-51320df1809a",
-          "isFeatured": false,
-          "createdAt": "2025-03-28T05:32:24.756Z",
-          "updatedAt": "2025-03-28T05:32:24.756Z"
-      },
-      "artist": {
-          "id": "dbdece00-02dd-4c01-b3fc-51320df1809a",
-          "name": "Taylor Swift",
-          "imageUrl": "https://i.scdn.co/image/ab6761610000e5eb5a00969a4698c3bc19d84156",
-          "description": "American singer-songwriter",
-          "isFeatured": false,
-          "createdAt": "2025-03-28T05:32:24.746Z",
-          "updatedAt": "2025-03-28T05:32:24.746Z"
-      }
-  }
+{
+    "song_id": "S37",
+    "song_name": "Whatever She Wants",
+    "billboard": [
+        "Whatever She Wants",
+        "Bryson Tiller"
+    ],
+    "artists": {
+        "A25": "Bryson Tiller"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S38",
+    "song_name": "March Madness",
+    "billboard": [
+        "March Madness",
+        "Future"
+    ],
+    "artists": {
+        "A2": "Future"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S39",
+    "song_name": "Wasted On You",
+    "billboard": [
+        "Wasted On You",
+        "Morgan Wallen"
+    ],
+    "artists": {
+        "A6": "Morgan Wallen"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S40",
+    "song_name": "Spin You Around (1_24)",
+    "billboard": [
+        "Spin You Around (1_24)",
+        "Morgan Wallen"
+    ],
+    "artists": {
+        "A6": "Morgan Wallen"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S41",
+    "song_name": "Get In With Me",
+    "billboard": [
+        "Get In With Me",
+        "BossMan Dlow"
+    ],
+    "artists": {
+        "A26": "BossMan Dlow"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S42",
+    "song_name": "FE!N (feat. Playboi Carti)",
+    "billboard": [
+        "FE!N (feat. Playboi Carti)",
+        "Travis Scott"
+    ],
+    "artists": {
+        "A27": "Travis Scott"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S43",
+    "song_name": "Mask Off",
+    "billboard": [
+        "Mask Off",
+        "Future"
+    ],
+    "artists": {
+        "A2": "Future"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S44",
+    "song_name": "Pink Skies",
+    "billboard": [
+        "Pink Skies",
+        "Zach Bryan"
+    ],
+    "artists": {
+        "A7": "Zach Bryan"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S45",
+    "song_name": "Oklahoma Smokeshow",
+    "billboard": [
+        "Oklahoma Smokeshow",
+        "Zach Bryan"
+    ],
+    "artists": {
+        "A7": "Zach Bryan"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S46",
+    "song_name": "Tennessee Whiskey",
+    "billboard": [
+        "Tennessee Whiskey",
+        "Chris Stapleton"
+    ],
+    "artists": {
+        "A28": "Chris Stapleton"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S47",
+    "song_name": "Power Trip",
+    "billboard": [
+        "Power Trip",
+        "J. Cole"
+    ],
+    "artists": {
+        "A29": "J. Cole"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S48",
+    "song_name": "Something in the Orange",
+    "billboard": [
+        "Something in the Orange",
+        "Zach Bryan"
+    ],
+    "artists": {
+        "A7": "Zach Bryan"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S49",
+    "song_name": "Nonstop",
+    "billboard": [
+        "Nonstop",
+        "Drake"
+    ],
+    "artists": {
+        "A16": "Drake"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S50",
+    "song_name": "Beautiful Crazy",
+    "billboard": [
+        "Beautiful Crazy",
+        "Luke Combs"
+    ],
+    "artists": {
+        "A19": "Luke Combs"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S51",
+    "song_name": "Fortnight",
+    "billboard": [
+        "Fortnight",
+        "Taylor Swift"
+    ],
+    "artists": {
+        "A21": "Taylor Swift"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S52",
+    "song_name": "Where the Wild Things Are",
+    "billboard": [
+        "Where the Wild Things Are",
+        "Luke Combs"
+    ],
+    "artists": {
+        "A19": "Luke Combs"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S53",
+    "song_name": "greedy",
+    "billboard": [
+        "greedy",
+        "Tate McRae"
+    ],
+    "artists": {
+        "A30": "Tate McRae"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S54",
+    "song_name": "Knife Talk",
+    "billboard": [
+        "Knife Talk",
+        "Drake"
+    ],
+    "artists": {
+        "A16": "Drake"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S55",
+    "song_name": "Gata Only",
+    "billboard": [
+        "Gata Only",
+        "FloyyMenor"
+    ],
+    "artists": {
+        "A31": "FloyyMenor"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S56",
+    "song_name": "Good Days",
+    "billboard": [
+        "Good Days",
+        "SZA"
+    ],
+    "artists": {
+        "A5": "SZA"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S57",
+    "song_name": "Woah",
+    "billboard": [
+        "Woah",
+        "Lil Baby"
+    ],
+    "artists": {
+        "A9": "Lil Baby"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S58",
+    "song_name": "fukumean",
+    "billboard": [
+        "fukumean",
+        "Gunna"
+    ],
+    "artists": {
+        "A32": "Gunna"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S59",
+    "song_name": "First Person Shooter",
+    "billboard": [
+        "First Person Shooter",
+        "Drake"
+    ],
+    "artists": {
+        "A16": "Drake"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S60",
+    "song_name": "HIGHEST IN THE ROOM",
+    "billboard": [
+        "HIGHEST IN THE ROOM",
+        "Travis Scott"
+    ],
+    "artists": {
+        "A27": "Travis Scott"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S61",
+    "song_name": "Thought You Should Know",
+    "billboard": [
+        "Thought You Should Know",
+        "Morgan Wallen"
+    ],
+    "artists": {
+        "A6": "Morgan Wallen"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S62",
+    "song_name": "Kacey Talk",
+    "billboard": [
+        "Kacey Talk",
+        "YoungBoy Never Broke Again"
+    ],
+    "artists": {
+        "A33": "YoungBoy Never Broke Again"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S63",
+    "song_name": "Don't",
+    "billboard": [
+        "Don't",
+        "Bryson Tiller"
+    ],
+    "artists": {
+        "A25": "Bryson Tiller"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S64",
+    "song_name": "You Broke My Heart",
+    "billboard": [
+        "You Broke My Heart",
+        "Drake"
+    ],
+    "artists": {
+        "A16": "Drake"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S65",
+    "song_name": "Good Luck, Babe!",
+    "billboard": [
+        "Good Luck, Babe!",
+        "Chappell Roan"
+    ],
+    "artists": {
+        "A34": "Chappell Roan"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S66",
+    "song_name": "Kill Bill",
+    "billboard": [
+        "Kill Bill",
+        "SZA"
+    ],
+    "artists": {
+        "A5": "SZA"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S67",
+    "song_name": "Revival",
+    "billboard": [
+        "Revival",
+        "Zach Bryan"
+    ],
+    "artists": {
+        "A7": "Zach Bryan"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S68",
+    "song_name": "Bank Account",
+    "billboard": [
+        "Bank Account",
+        "21 Savage"
+    ],
+    "artists": {
+        "A24": "21 Savage"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S69",
+    "song_name": "Under The Influence",
+    "billboard": [
+        "Under The Influence",
+        "Chris Brown"
+    ],
+    "artists": {
+        "A35": "Chris Brown"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S70",
+    "song_name": "Wants and Needs",
+    "billboard": [
+        "Wants and Needs",
+        "Drake"
+    ],
+    "artists": {
+        "A16": "Drake"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S71",
+    "song_name": "Great Gatsby",
+    "billboard": [
+        "Great Gatsby",
+        "Rod Wave"
+    ],
+    "artists": {
+        "A36": "Rod Wave"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S72",
+    "song_name": "Virginia Beach",
+    "billboard": [
+        "Virginia Beach",
+        "Drake"
+    ],
+    "artists": {
+        "A16": "Drake"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S73",
+    "song_name": "Wanna Be",
+    "billboard": [
+        "Wanna Be",
+        "GloRilla"
+    ],
+    "artists": {
+        "A22": "GloRilla"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S74",
+    "song_name": "God's Plan",
+    "billboard": [
+        "God's Plan",
+        "Drake"
+    ],
+    "artists": {
+        "A16": "Drake"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S75",
+    "song_name": "Passionfruit",
+    "billboard": [
+        "Passionfruit",
+        "Drake"
+    ],
+    "artists": {
+        "A16": "Drake"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S76",
+    "song_name": "No Guidance (feat. Drake)",
+    "billboard": [
+        "No Guidance (feat. Drake)",
+        "Chris Brown"
+    ],
+    "artists": {
+        "A35": "Chris Brown"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S77",
+    "song_name": "Tourniquet",
+    "billboard": [
+        "Tourniquet",
+        "Zach Bryan"
+    ],
+    "artists": {
+        "A7": "Zach Bryan"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S78",
+    "song_name": "No Flockin'",
+    "billboard": [
+        "No Flockin'",
+        "Kodak Black"
+    ],
+    "artists": {
+        "A37": "Kodak Black"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S79",
+    "song_name": "Made For Me",
+    "billboard": [
+        "Made For Me",
+        "Muni Long"
+    ],
+    "artists": {
+        "A38": "Muni Long"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S80",
+    "song_name": "Sativa",
+    "billboard": [
+        "Sativa",
+        "Jhené Aiko"
+    ],
+    "artists": {
+        "A39": "Jhené Aiko"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S81",
+    "song_name": "Nobody Gets Me",
+    "billboard": [
+        "Nobody Gets Me",
+        "SZA"
+    ],
+    "artists": {
+        "A5": "SZA"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S82",
+    "song_name": "Mmhmm",
+    "billboard": [
+        "Mmhmm",
+        "BigXthaPlug"
+    ],
+    "artists": {
+        "A40": "BigXthaPlug"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S83",
+    "song_name": "More Than My Hometown",
+    "billboard": [
+        "More Than My Hometown",
+        "Morgan Wallen"
+    ],
+    "artists": {
+        "A6": "Morgan Wallen"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S84",
+    "song_name": "WILDFLOWER",
+    "billboard": [
+        "WILDFLOWER",
+        "Billie Eilish"
+    ],
+    "artists": {
+        "A15": "Billie Eilish"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S85",
+    "song_name": "IDGAF",
+    "billboard": [
+        "IDGAF",
+        "Drake"
+    ],
+    "artists": {
+        "A16": "Drake"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S86",
+    "song_name": "No Role Modelz",
+    "billboard": [
+        "No Role Modelz",
+        "J. Cole"
+    ],
+    "artists": {
+        "A29": "J. Cole"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S87",
+    "song_name": "Burn, Burn, Burn",
+    "billboard": [
+        "Burn, Burn, Burn",
+        "Zach Bryan"
+    ],
+    "artists": {
+        "A7": "Zach Bryan"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S88",
+    "song_name": "we can't be friends (wait for your love)",
+    "billboard": [
+        "we can't be friends (wait for your love)",
+        "Ariana Grande"
+    ],
+    "artists": {
+        "A41": "Ariana Grande"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S89",
+    "song_name": "In A Minute",
+    "billboard": [
+        "In A Minute",
+        "Lil Baby"
+    ],
+    "artists": {
+        "A9": "Lil Baby"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S90",
+    "song_name": "She Got the Best of Me",
+    "billboard": [
+        "She Got the Best of Me",
+        "Luke Combs"
+    ],
+    "artists": {
+        "A19": "Luke Combs"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S91",
+    "song_name": "Karma",
+    "billboard": [
+        "Karma",
+        "Summer Walker"
+    ],
+    "artists": {
+        "A42": "Summer Walker"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S92",
+    "song_name": "Low Life (feat. The Weeknd)",
+    "billboard": [
+        "Low Life (feat. The Weeknd)",
+        "Future"
+    ],
+    "artists": {
+        "A2": "Future"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S93",
+    "song_name": "Valuable Pain",
+    "billboard": [
+        "Valuable Pain",
+        "YoungBoy Never Broke Again"
+    ],
+    "artists": {
+        "A33": "YoungBoy Never Broke Again"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S94",
+    "song_name": "La Diabla",
+    "billboard": [
+        "La Diabla",
+        "Xavi"
+    ],
+    "artists": {
+        "A43": "Xavi"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S95",
+    "song_name": "Lies Lies Lies",
+    "billboard": [
+        "Lies Lies Lies",
+        "Morgan Wallen"
+    ],
+    "artists": {
+        "A6": "Morgan Wallen"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S96",
+    "song_name": "Pink + White",
+    "billboard": [
+        "Pink + White",
+        "Frank Ocean"
+    ],
+    "artists": {
+        "A44": "Frank Ocean"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S97",
+    "song_name": "All My Life (feat. J. Cole)",
+    "billboard": [
+        "All My Life (feat. J. Cole)",
+        "Lil Durk"
+    ],
+    "artists": {
+        "A45": "Lil Durk"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S98",
+    "song_name": "TÚ NAME",
+    "billboard": [
+        "TÚ NAME",
+        "Fuerza Regida"
+    ],
+    "artists": {
+        "A46": "Fuerza Regida"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S99",
+    "song_name": "Exchange",
+    "billboard": [
+        "Exchange",
+        "Bryson Tiller"
+    ],
+    "artists": {
+        "A25": "Bryson Tiller"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+},
+{
+    "song_id": "S100",
+    "song_name": "LADY GAGA",
+    "billboard": [
+        "LADY GAGA",
+        "Peso Pluma"
+    ],
+    "artists": {
+        "A47": "Peso Pluma"
+    },
+    "popularity": 50,
+    "explicit": false,
+    "song_type": "Solo"
+}
 ]

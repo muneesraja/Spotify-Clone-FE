@@ -1,31 +1,39 @@
 'use client';
 
-import { useAtom } from 'jotai';
-import { likeSong, playSong, unlikeSong } from '@/app/actions/songs';
+import { useAtom, useSetAtom } from 'jotai';
+import { likeSong, unlikeSong } from '@/app/actions/songs';
 import { likedSongsAtom, isLikedAtom } from '@/store/atoms/likedSongs';
-import type { Song } from '@/api-types/models/Song';
+import { 
+  currentSongAtom, 
+  isPlayingAtom, 
+  PlayerSong 
+} from '@/lib/jotai/playerAtoms';
 
 interface SongCardActionsProps {
-  songId: string;
+  song: PlayerSong;
   isHovered: boolean;
   onLikeChange?: () => void;
-  isLiked: boolean;
 }
 
-export function SongCardActions({ songId, isHovered, onLikeChange }: SongCardActionsProps) {
+export function SongCardActions({
+  song,
+  isHovered,
+  onLikeChange,
+}: SongCardActionsProps) {
   const [isLiked] = useAtom(isLikedAtom);
+  const setCurrentSong = useSetAtom(currentSongAtom);
+  const setIsPlaying = useSetAtom(isPlayingAtom);
 
-  const handlePlay = async () => {
-    const result = await playSong(songId);
-    if (result.success) {
-      console.log(`Playing song: ${songId}`);
-    }
+  const handlePlay = () => {
+    setCurrentSong(song);
+    setIsPlaying(true);
+    console.log(`Set current song: ${song.title}`);
   };
   
   const handleLike = async () => {
-    const isSongCurrentlyLiked = isLiked(songId);
+    const isSongCurrentlyLiked = isLiked(song.id);
     const action = isSongCurrentlyLiked ? unlikeSong : likeSong;
-    const result = await action(songId);
+    const result = await action(song.id);
     if (result.success) {
       onLikeChange?.();
     } else {
@@ -33,7 +41,7 @@ export function SongCardActions({ songId, isHovered, onLikeChange }: SongCardAct
     }
   };
 
-  const isCurrentSongLiked = isLiked(songId);
+  const isCurrentSongLiked = isLiked(song.id);
 
   return (
     <div className={`absolute inset-0 flex items-center justify-center gap-4 bg-black/40 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
