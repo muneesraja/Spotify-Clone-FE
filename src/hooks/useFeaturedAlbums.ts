@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 import { albumApi } from '@/lib/api/albums';
-import { Album } from '@/api-types/models/Album';
 
 export const useFeaturedAlbums = () => {
   // Define a query key for featured albums

@@ -62,6 +62,7 @@ export class AlbumsService {
                 'id': id,
             },
             errors: {
+                400: `Invalid UUID format.`,
                 404: `Album not found.`,
             },
         });

@@ -1,7 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 import { albumApi } from '@/lib/api/albums';
-import { Album } from '@/api-types/models/Album';
-import { Song } from '@/api-types/models/Song';
 
 export function useAlbumDetails(albumId: string) {
   // Query for album details

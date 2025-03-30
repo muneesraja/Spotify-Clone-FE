@@ -26,10 +26,6 @@ export type Song = {
      */
     imageUrl: string | null;
     /**
-     * The URL for the audio file
-     */
-    audioUrl?: string;
-    /**
      * The ID of the album this song belongs to
      */
     albumId: string;

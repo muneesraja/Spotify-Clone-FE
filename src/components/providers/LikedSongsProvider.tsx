@@ -3,11 +3,12 @@
 import { useEffect } from 'react';
 import { useAtom } from 'jotai';
 import { likedSongsAtom } from '@/store/atoms/likedSongs';
+import type { LikedSong } from '@/api-types/services/LikedSongsService';
 
 interface LikedSongsProviderProps {
   initialLikedSongs: {
     likedSongIds: string[];
-    likedSongsData: any[];
+    likedSongsData: LikedSong[];
   };
   children: React.ReactNode;
 }

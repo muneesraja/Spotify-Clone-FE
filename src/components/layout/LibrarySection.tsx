@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAtom } from 'jotai';
 import { likedSongsAtom } from '@/store/atoms/likedSongs';
-import type { Song } from '@/api-types/models/Song';
 
 interface LibrarySectionProps {
   isAuthenticated: boolean;
@@ -35,7 +34,7 @@ export function LibrarySection({ isAuthenticated }: LibrarySectionProps) {
       <div className="space-y-2 mt-8">
         <div className="p-4 bg-[#242424] rounded-md">
           <p className="font-bold">Create your most liked playlist</p>
-          <p className="text-sm text-text-secondary mt-1 mb-3">It's easy, we'll help you</p>
+          <p className="text-sm text-text-secondary mt-1 mb-3">It&apos;s easy, we&lsquo;ll help you</p>
           <button 
             onClick={handleLibraryClick}
             className="text-black bg-white px-4 py-1.5 rounded-full text-sm font-bold hover:scale-105 transition-all"

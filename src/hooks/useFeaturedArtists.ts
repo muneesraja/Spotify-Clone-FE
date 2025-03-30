@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 import { artistApi } from '@/lib/api/artists';
-import { Artist } from '@/api-types/models/Artist';
 
 export const useFeaturedArtists = () => {
   // Define a query key for featured artists

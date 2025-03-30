@@ -1,6 +1,5 @@
 'use client';
 
-import { useQuery } from '@tanstack/react-query';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
 
@@ -12,7 +11,7 @@ export function SearchForm() {
   const [searchQuery, setSearchQuery] = useState('');
   
   // Remove debouncing functionality
-  useEffect(() => {
+  useEffect(() => { 
     const query = searchParams.get('q') || '';
     setSearchQuery(query);
   }, [searchParams]);

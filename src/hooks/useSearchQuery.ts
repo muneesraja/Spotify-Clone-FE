@@ -43,7 +43,7 @@ export function useSearchQuery(query: string, debounceDelay = 300) {
   });
 
   return {
-    searchResults: data ?? [], // Provide a default empty array
+    data: data ?? [], // Provide a default empty array
     isLoading: isLoading,
     isFetching: isFetching, // Indicates background fetching
     isError: isError,

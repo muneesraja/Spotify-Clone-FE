@@ -1,13 +1,13 @@
 'use client';
 
+import { User } from '@/api-types';
 import Link from 'next/link';
 // Removed UserMenu import as it's replaced by greeting
 // import { UserMenu } from './UserMenu'; 
 
 interface AuthButtonsProps {
   isAuthenticated: boolean;
-  // Assume user object has a username property
-  user: { username?: string; [key: string]: any }; 
+  user: User; 
 }
 
 export function AuthButtons({ isAuthenticated, user }: AuthButtonsProps) {
@@ -16,7 +16,7 @@ export function AuthButtons({ isAuthenticated, user }: AuthButtonsProps) {
       {isAuthenticated ? (
         // Display greeting instead of UserMenu
         <div className="text-white font-medium">
-          Hi, {user?.username || 'User'}!
+          Hi, {user.username || 'User'}!
         </div>
       ) : (
         // Unauthenticated buttons remain the same

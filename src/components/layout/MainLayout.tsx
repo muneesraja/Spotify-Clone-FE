@@ -4,10 +4,11 @@ import { useState } from 'react'; // Import useState
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Header } from '@/components/layout/Header';
 import { Player } from '@/components/layout/Player';
+import { User } from '@/api-types';
 
 interface MainLayoutProps {
   children: React.ReactNode;
-  user: any;
+  user: User;
   isAuthenticated: boolean;
 }
 

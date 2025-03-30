@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 import { songApi } from '@/lib/api/songs';
-import { Song } from '@/api-types/models/Song';
 
 export const useFeaturedSongs = () => {
   // Define a query key for featured songs

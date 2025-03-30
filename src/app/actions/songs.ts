@@ -62,7 +62,7 @@ export async function playSong(songId: string) {
       try {
           const errorBody = await response.json();
           console.error('Play song API error body:', errorBody);
-      } catch(e) { /* Ignore if body isn't JSON */ }
+      } catch(err: unknown) { console.error('Failed to play song:', err); }
       throw new Error('Failed to play song');
     }
 

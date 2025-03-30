@@ -1,9 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useSearchQuery } from '@/hooks/useSearchQuery';
-import { SearchResponseDto } from '@/api-types'; // Import the DTO
 import { Song } from '@/api-types/models/Song'; // Import specific types
 import { Artist } from '@/api-types/models/Artist';
 import { Album } from '@/api-types/models/Album';
@@ -17,9 +15,16 @@ interface SearchResultsProps {
   query: string;
 }
 
+interface SearchResults {
+  songs: Song[];
+  artists: Artist[];
+  albums: Album[];
+}
+
 function SearchResults({ query }: SearchResultsProps) {
   // Adjust destructuring based on the hook's actual return type
-  const { searchResults, isLoading, isFetching, isError, error } = useSearchQuery(query);
+  const { data: searchResults, isLoading, isFetching, isError, error } = useSearchQuery(query);
+  console.log(searchResults);
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Error searching: {error?.message || 'Unknown error'}</p>;
 
@@ -38,14 +43,12 @@ function SearchResults({ query }: SearchResultsProps) {
 
   return (
     <div className="space-y-8">
-      <h1 className="text-2xl font-bold">Results for "{query}"</h1>
-
+      <h1 className="text-2xl font-bold">Results for {query}</h1>
       {isFetching && <p>Fetching results...</p>}
-
+      
       {!hasResults && !isFetching && (
-        <p className="text-text-secondary">No results found for "{query}".</p>
+        <p className="text-text-secondary">No results found for {query}.</p>
       )}
-
       {hasSongs && (
         <section>
           <h2 className="text-xl font-bold mb-4">Songs</h2>
@@ -110,7 +113,6 @@ function BrowseAll() {
 // Main Search Page Component
 export default function SearchPage() {
   const searchParams = useSearchParams();
-  const [inputValue, setInputValue] = useState(searchParams.get('q') || '');
   const queryFromUrl = searchParams.get('q') || '';
 
   // TODO: Implement search input

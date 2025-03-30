@@ -26,7 +26,7 @@ export function ArtistAlbums({ artist, albums }: ArtistAlbumsProps) {
       <div className="bg-[#333] p-6 rounded-lg text-center">
         <h3 className="text-xl font-bold mb-2">No albums found</h3>
         <p className="text-text-secondary">
-          {artist.name} hasn't released any albums yet.
+          {artist.name} hasn&apos;t released any albums yet.
         </p>
       </div>
     );

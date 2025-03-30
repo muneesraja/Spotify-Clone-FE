@@ -4,9 +4,7 @@ import { ArtistAlbums } from '@/components/artists/ArtistAlbums';
 import { getArtistDetails } from '@/app/actions/artists';
 
 interface ArtistDetailsPageProps {
-  params: {
-    id: string;
-  };
+  params: Promise<{ id: string }>;
 }
 
 export default async function ArtistDetailsPage({ params }: ArtistDetailsPageProps) {

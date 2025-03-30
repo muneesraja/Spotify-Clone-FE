@@ -2,7 +2,7 @@
 
 import { useAtom, useSetAtom } from 'jotai';
 import { likeSong, unlikeSong } from '@/app/actions/songs';
-import { likedSongsAtom, isLikedAtom } from '@/store/atoms/likedSongs';
+import { isLikedAtom } from '@/store/atoms/likedSongs';
 import { 
   currentSongAtom, 
   isPlayingAtom, 

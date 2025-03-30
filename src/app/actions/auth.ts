@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 
-export async function login(prevState: any, formData: FormData) {
+export async function login(prevState: unknown, formData: FormData) {
   const email = formData.get('email');
   const password = formData.get('password');
 
@@ -24,7 +24,6 @@ export async function login(prevState: any, formData: FormData) {
       console.error('Login failed:', error);
       return { message: error.message || 'Login failed' };
     }
-
     const data = await response.json();
     console.log('Login successful, setting cookie...');
     
@@ -46,7 +45,7 @@ export async function login(prevState: any, formData: FormData) {
   }
 }
 
-export async function register(prevState: any, formData: FormData) {
+export async function register(prevState: unknown, formData: FormData) {
   const username = formData.get('username');
   const email = formData.get('email');
   const password = formData.get('password');

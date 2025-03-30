@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { useAtom } from 'jotai';
 import Image from 'next/image';
 import {
@@ -9,7 +9,6 @@ import {
   currentTimeAtom,
   durationAtom,
   volumeAtom,
-  PlayerSong,
 } from '@/lib/jotai/playerAtoms';
 import {
   IoPlaySkipBack,
@@ -30,7 +29,7 @@ function formatTime(seconds: number): string {
 }
 
 export function Player() {
-  const [currentSong, setCurrentSong] = useAtom(currentSongAtom);
+  const [currentSong] = useAtom(currentSongAtom);
   const [isPlaying, setIsPlaying] = useAtom(isPlayingAtom);
   const [currentTime, setCurrentTime] = useAtom(currentTimeAtom);
   const [duration, setDuration] = useAtom(durationAtom);

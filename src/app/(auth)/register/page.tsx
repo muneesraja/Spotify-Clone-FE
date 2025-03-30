@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 
 export default function Register() {
   const router = useRouter();
-  const [state, formAction] = useFormState(register, null);
+  const [state, formAction] = useFormState( register, null);
 
   useEffect(() => {
     if (state?.success) {

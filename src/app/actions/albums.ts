@@ -3,7 +3,6 @@
 import { endpoints } from '@/lib/api/endpoints';
 import type { Album } from '@/api-types/models/Album';
 import type { Song } from '@/api-types/models/Song';
-import type { Artist } from '@/api-types/models/Artist';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
 
@@ -72,7 +71,7 @@ export async function getAlbumDetails(id: string): Promise<{ album: Album | null
     const rawSongs = album?.songs || [];
 
     // Ensure songs have the correct artist structure
-    const songs = rawSongs.map((song: any) => ({
+    const songs = rawSongs.map((song: Song) => ({
       ...song,
       artist: album.artist,
       artistId: album.artist.id,

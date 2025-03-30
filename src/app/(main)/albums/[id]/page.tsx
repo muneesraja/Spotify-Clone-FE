@@ -4,13 +4,11 @@ import Link from 'next/link';
 import { AlbumSongs } from '@/components/albums/AlbumSongs';
 import { getAlbumDetails } from '@/app/actions/albums';
 
-interface AlbumDetailsPageProps {
-  params: {
-    id: string;
-  };
-}
 
-export default async function AlbumDetailsPage({ params }: AlbumDetailsPageProps) {
+interface AlbumDetailsPageProps {
+  params: Promise<{ id: string }>;
+}
+export default async function AlbumDetailsPage({params}: AlbumDetailsPageProps) {
   const { id } = await params;
   const { album, songs } = await getAlbumDetails(id);
 

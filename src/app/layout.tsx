@@ -16,11 +16,10 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [user, likedSongs] = await Promise.all([
+  const [, likedSongs] = await Promise.all([
     getUser(),
     initializeLikedSongs()
   ]);
-  const isAuthenticated = !!user;
 
   return (
     <html lang="en">

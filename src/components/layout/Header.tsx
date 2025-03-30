@@ -1,11 +1,11 @@
-import Link from 'next/link';
 import { SearchForm } from './SearchForm';
 import { NavigationButtons } from './NavigationButtons';
 import { AuthButtons } from './AuthButtons';
+import { User } from '@/api-types';
 
 // Define props interface
 interface HeaderProps {
-  user: any; // Use a more specific type if available
+  user: User; // Use a more specific type if available
   isAuthenticated: boolean;
   onMenuToggle: () => void; // Add the toggle function prop
 }
