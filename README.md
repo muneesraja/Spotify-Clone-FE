@@ -11,9 +11,9 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 - Migrated key routes (Songs, Artists, Albums, Search) to Next.js Server Components for improved performance.
 - Implemented Server Actions for data fetching and mutations.
 - Search functionality with real-time updates and debouncing.
-- Liked songs functionality with global state management (e.g., Jotai or Context).
+- Working like/unlike song functionality.
 - Display of artist/album details.
-- Music player interface
+- Basic music player interface for song playback.
 
 ## Getting Started
 

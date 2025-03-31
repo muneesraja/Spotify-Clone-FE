@@ -1,5 +1,22 @@
 # Changelog - Frontend
 
+## [3.0.0] - 2025-03-31
+
+### Added
+- Implemented a basic audio player component for song playback.
+
+### Changed
+- Refactored the like/unlike functionality for better consistency and state management.
+
+### Fixed
+- Resolved Cross-Origin Resource Sharing (CORS) errors preventing authenticated API calls from the browser.
+- Addressed various linting errors throughout the codebase.
+
+### Technical
+- Configured environment variables for client-side API base URL (`NEXT_PUBLIC_BASE_URL`).
+- Set up reverse proxy configuration guidance for deployment (e.g., on Railway).
+
+
 ## [2.0.0] - 2025-03-29
 
 ### Added
