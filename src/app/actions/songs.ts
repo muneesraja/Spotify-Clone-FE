@@ -4,7 +4,7 @@ import { endpoints } from '@/lib/api/endpoints';
 import type { Song } from '@/api-types/models/Song';
 import { cookies } from 'next/headers';
 
-const API_URL = process.env.BASE_URL || 'http://localhost:3000';
+const API_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
 export async function getAllSongs() {
   try {

@@ -4,7 +4,7 @@ import { endpoints } from '@/lib/api/endpoints';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
-  const API_URL = process.env.BASE_URL || 'http://localhost:3000';
+  const API_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
 export async function login(prevState: unknown, formData: FormData) {
   const email = formData.get('email');

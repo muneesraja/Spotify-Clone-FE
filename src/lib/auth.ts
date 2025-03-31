@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers';
 import { endpoints } from '@/lib/api/endpoints';
-const API_URL = process.env.BASE_URL || 'http://localhost:3000';
+const API_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
 export async function getUser() {
   const cookieStore = await cookies();
@@ -11,7 +11,7 @@ export async function getUser() {
   }
 
   try {
-    const response = await fetch(`${API_URL}${endpoints.auth.profile}`, {
+    const response = await fetch(API_URL + endpoints.auth.profile, {
       headers: {
         Authorization: `Bearer ${token.value}`,
       },

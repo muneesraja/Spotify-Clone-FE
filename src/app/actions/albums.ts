@@ -4,7 +4,7 @@ import { endpoints } from '@/lib/api/endpoints';
 import type { Album } from '@/api-types/models/Album';
 import type { Song } from '@/api-types/models/Song';
 
-const API_URL = process.env.BASE_URL || 'http://localhost:3000';
+const API_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
 
 export async function getAllAlbums() {
   try {
