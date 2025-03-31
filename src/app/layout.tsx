@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { getUser } from '@/lib/auth';
-import { initializeLikedSongs } from './actions/songs';
-import { LikedSongsProvider } from '@/components/providers/LikedSongsProvider';
 import { QueryProvider } from "@/components/providers/QueryProvider";
 
 
@@ -16,18 +14,13 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [, likedSongs] = await Promise.all([
-    getUser(),
-    initializeLikedSongs()
-  ]);
+  await getUser();
 
   return (
     <html lang="en">
       <body className="bg-background text-text-primary">
         <QueryProvider>
-          <LikedSongsProvider initialLikedSongs={likedSongs}>
-            {children}
-          </LikedSongsProvider>
+          {children}
         </QueryProvider>
       </body>
     </html>

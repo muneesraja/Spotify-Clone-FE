@@ -1,4 +1,0 @@
-Our goal is to create a Nextjs app which is specifically used for front-end of our Spotify clone, we will be utilizing following API documentation front-end/docs/API.md of our backend, also jus have a quick glance of front-end/docs/README-BE.md, go through the docs and plan the route structure of our Application. - Planing the Next js front-end should include route planning ex.(login, register, search, details page, artist page, album artist), utility function for ex. debounce for the search feature, loading state, state management, re-usable component, folder structure, API and should be super minimal.
-
-Note: 
-while making plan it based on the library we are going to use, Jotai, React Query, tailwindcss, shadcn, axios.

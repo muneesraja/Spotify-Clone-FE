@@ -2,15 +2,14 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { SongCardActions } from './SongCardActions';
-import type { PlayerSong } from '@/lib/jotai/playerAtoms';
+import type { Song } from '@/api-types/models/Song';
+import { LikeButton } from './LikeButton';
 
 interface SongProps {
-  song: PlayerSong;
-  onLikeChange?: () => void;
+  song: Song;
 }
 
-export function SongCard({ song, onLikeChange }: SongProps) {
+export function SongCard({ song }: SongProps) {
   const [isHovered, setIsHovered] = useState(false);
   
   const artistId = typeof song.artist === 'string' ? null : song.artist?.id;
@@ -28,11 +27,9 @@ export function SongCard({ song, onLikeChange }: SongProps) {
           alt={song.title} 
           className="w-full h-full aspect-square object-cover bg-neutral-700"
         />
-        <SongCardActions 
-          song={song}
-          isHovered={isHovered} 
-          onLikeChange={onLikeChange}
-        /> 
+        <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <LikeButton songId={song.id} className="bg-[#181818]/70 backdrop-blur-sm" />
+        </div>
       </div>
       <Link href={`/songs/${song.id}`}>
         <h3 className="font-bold text-white mb-1 line-clamp-1">{song.title}</h3>

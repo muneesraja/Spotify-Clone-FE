@@ -9,8 +9,8 @@ export const endpoints = {
     list: '/songs',
     featured: '/songs/featured',
     search: '/songs/search',
-    like: (id: string) => `/songs/${id}/like`,
     play: (id: string) => `/songs/${id}/play`,
+    like: (id: string) => `/songs/${id}/like`,
   },
   artists: {
     list: '/artists',
@@ -23,7 +23,7 @@ export const endpoints = {
     featured: '/albums/featured',
     details: (id: string) => `/albums/${id}`,
   },
-  user: {
+  users: {
     likedSongs: '/users/me/liked-songs',
   },
 }; 

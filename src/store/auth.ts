@@ -1,4 +1,3 @@
-import { atom } from 'jotai';
 
 export interface User {
   id: string;
@@ -16,15 +15,3 @@ export interface RegisterCredentials {
   email: string;
   password: string;
 }
-
-// Store the user data
-export const userAtom = atom<User | null>(null);
-
-// Authentication loading state
-export const loadingAtom = atom<boolean>(true);
-
-// Derived atom to check if user is authenticated
-export const isAuthenticatedAtom = atom((get) => !!get(userAtom));
-
-// Store redirect URL for post-login navigation
-export const authRedirectAtom = atom<string | null>(null); 

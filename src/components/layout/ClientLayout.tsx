@@ -1,7 +1,6 @@
 'use client';
 
 import { usePathname } from 'next/navigation';
-import { Player } from './Player';
 
 interface ClientLayoutProps {
   children: React.ReactNode;
@@ -19,9 +18,6 @@ export function ClientLayout({ children, isAuthenticated }: ClientLayoutProps) {
   return (
     <>
       {children}
-      <div className="col-span-2 row-start-2">
-        {isAuthenticated && <Player />}
-      </div>
     </>
   );
 } 

@@ -1,10 +1,10 @@
 'use client'; // Convert to Client Component for state
 
-import { useState } from 'react'; // Import useState
+import { useState, useEffect } from 'react'; // Import useState and useEffect
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Header } from '@/components/layout/Header';
-import { Player } from '@/components/layout/Player';
 import { User } from '@/api-types';
+import { useLikedSongsStore } from '@/store/likedSongsStore'; // Import the store
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -15,6 +15,17 @@ interface MainLayoutProps {
 export function MainLayout({ children, user, isAuthenticated }: MainLayoutProps) {
   // State for mobile sidebar visibility
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+
+  // Fetch liked songs when the user is authenticated
+  const fetchLikedSongs = useLikedSongsStore((state) => state.fetchLikedSongs);
+  useEffect(() => {
+    if (isAuthenticated) {
+      console.log('MainLayout: Authenticated, fetching liked songs...');
+      fetchLikedSongs();
+    }
+    // We only want to run this when isAuthenticated status potentially changes or on initial load
+    // If isAuthenticated changes from true to false, we don't need to do anything here
+  }, [isAuthenticated, fetchLikedSongs]);
 
   // Function to toggle the state
   const toggleMobileNav = () => {
@@ -41,7 +52,6 @@ export function MainLayout({ children, user, isAuthenticated }: MainLayoutProps)
                 {children}
              </div>
           </div>
-          {isAuthenticated && <Player />}
         </main>
          {/* Optional: Overlay for closing mobile nav when clicking outside */}
          {isMobileNavOpen && (

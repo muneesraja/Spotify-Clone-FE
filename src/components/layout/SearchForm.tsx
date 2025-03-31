@@ -1,38 +1,52 @@
 'use client';
 
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter, usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
-
-const DEBOUNCE_DELAY = 500; // Delay in milliseconds
+import { useDebounce } from '@/hooks/useDebounce';
 
 export function SearchForm() {
   const router = useRouter();
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = useState('');
+  const debouncedSearchQuery = useDebounce(searchQuery, 500);
   
-  // Remove debouncing functionality
+  // Effect to set initial state from URL
   useEffect(() => { 
     const query = searchParams.get('q') || '';
-    setSearchQuery(query);
-  }, [searchParams]);
+    // Only update local state if on the search page to avoid overwriting input on other pages
+    if (pathname === '/search') {
+      setSearchQuery(query);
+    }
+    // If not on search page and query param exists, clear local state
+    else if (query) {
+      setSearchQuery('');
+    }
+  }, [searchParams, pathname]);
 
-
+  // Effect to update URL when debounced query changes (REVISED LOGIC & DEPENDENCIES)
   useEffect(() => {
-    const timerId = setTimeout(() => {
-      const currentUrlQuery = searchParams.get('q') || '';
-      if (searchQuery !== currentUrlQuery) {
-        if (searchQuery.trim()) {
-          router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
-        } else if (currentUrlQuery) {
-          router.push('/search');
-        }
-      }
-    }, DEBOUNCE_DELAY);
+    // Get router, pathname, searchParams inside the effect
+    // Note: This might trigger lint warnings about missing dependencies, 
+    // but including them caused the previous issues. We rely on the internal 
+    // conditional logic to prevent unnecessary calls.
+    const currentPathname = pathname; // Use current values
+    const currentSearchParams = searchParams;
+    const currentUrlQuery = currentSearchParams.get('q') || '';
 
-    return () => {
-      clearTimeout(timerId);
-    };
-  }, [searchQuery, router, searchParams]);
+    if (debouncedSearchQuery) {
+      // Only push if not on search page OR if query differs
+      if (currentPathname !== '/search' || debouncedSearchQuery !== currentUrlQuery) {
+        router.push(`/search?q=${encodeURIComponent(debouncedSearchQuery)}`);
+      }
+    } else {
+      // Only clear query param if ON search page AND query param EXISTS
+      if (currentPathname === '/search' && currentUrlQuery) {
+        router.push('/search');
+      }
+    }
+    // Only react to changes in the debounced query itself
+  }, [debouncedSearchQuery]); // Removed router, pathname, searchParams to prevent unintended triggers
 
   return (
     <form className="relative ml-4" onSubmit={(e) => e.preventDefault()}>

@@ -22,15 +22,25 @@ export const songApi = {
     return response.data;
   },
 
-  // Like a song
-  likeSong: async (id: string): Promise<{ success: boolean }> => {
-    const response = await api.post(endpoints.songs.like(id));
-    return response.data;
-  },
-
   // Play a song
   playSong: async (id: string): Promise<{ url: string }> => {
     const response = await api.post(endpoints.songs.play(id));
     return response.data;
-  }
+  },
+
+  // Like a song
+  likeSong: async (id: string): Promise<void> => {
+    await api.post(endpoints.songs.like(id));
+  },
+
+  // Unlike a song
+  unlikeSong: async (id: string): Promise<void> => {
+    await api.delete(endpoints.songs.like(id));
+  },
+
+  // Get liked songs for the current user
+  getLikedSongs: async (): Promise<Song[]> => {
+    const response = await api.get(endpoints.users.likedSongs);
+    return response.data;
+  },
 }; 

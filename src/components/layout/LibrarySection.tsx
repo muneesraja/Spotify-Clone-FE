@@ -2,8 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useAtom } from 'jotai';
-import { likedSongsAtom } from '@/store/atoms/likedSongs';
+import Link from 'next/link';
 
 interface LibrarySectionProps {
   isAuthenticated: boolean;
@@ -11,8 +10,6 @@ interface LibrarySectionProps {
 
 export function LibrarySection({ isAuthenticated }: LibrarySectionProps) {
   const router = useRouter();
-  const [showLikedSongs, setShowLikedSongs] = useState(false);
-  const [likedSongs] = useAtom(likedSongsAtom);
 
   const handleLibraryClick = () => {
     if (!isAuthenticated) {
@@ -33,47 +30,32 @@ export function LibrarySection({ isAuthenticated }: LibrarySectionProps) {
 
       <div className="space-y-2 mt-8">
         <div className="p-4 bg-[#242424] rounded-md">
-          <p className="font-bold">Create your most liked playlist</p>
+          <p className="font-bold">Create your first playlist</p>
           <p className="text-sm text-text-secondary mt-1 mb-3">It&apos;s easy, we&lsquo;ll help you</p>
           <button 
             onClick={handleLibraryClick}
             className="text-black bg-white px-4 py-1.5 rounded-full text-sm font-bold hover:scale-105 transition-all"
           >
-            Create favorites
+            Create playlist
           </button>
         </div>
+
         {isAuthenticated && (
-          <div>
-            <button 
-              onClick={() => setShowLikedSongs(!showLikedSongs)} 
-              className="w-full flex items-center gap-4 p-4 bg-[#242424] rounded-md mt-4 hover:bg-[#333] transition-colors"
-            >
-              <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-pink-500 rounded-md flex items-center justify-center">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M10 18.25C9.75277 18.2525 9.5126 18.1603 9.325 17.9917L3.44167 12.4917C1.86667 11.025 1.86667 8.57331 3.44167 7.09831C4.94167 5.69831 7.275 5.72331 8.75 7.15831L10 8.33331L11.25 7.15831C12.725 5.72331 15.0583 5.69831 16.5583 7.09831C18.1333 8.56665 18.1333 11.0183 16.5583 12.4917L10.675 17.9917C10.4874 18.1603 10.2472 18.2525 10 18.25Z" fill="white"/>
+          <div 
+            className="p-4 bg-[#242424] rounded-md hover:bg-[#2a2a2a] transition-colors cursor-pointer"
+            onClick={() => router.push('/liked-songs')}
+          >
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-700 flex items-center justify-center rounded">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="24" height="24" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                 </svg>
               </div>
               <div>
-                <h3 className="font-bold">Liked Songs</h3>
-                <p className="text-sm text-text-secondary">Your saved tracks</p>
+                <p className="font-bold text-white">Liked Songs</p>
+                <p className="text-sm text-text-secondary">Playlist • {/* TODO: Add count of liked songs from store */} songs</p>
               </div>
-            </button>
-            
-            {showLikedSongs && (
-              <div className="mt-2 ml-4 space-y-2">
-                {likedSongs.likedSongsData.map((song) => (
-                  <div key={song.id} className="flex items-center gap-3 p-2 hover:bg-[#333] rounded-md cursor-pointer">
-                    <div className="w-10 h-10 bg-[#282828] rounded flex-shrink-0"></div>
-                    <div className="truncate">
-                      <p className="text-sm font-medium truncate">{song.title}</p>
-                      <p className="text-xs text-text-secondary truncate">
-                        {typeof song.artist === 'string' ? song.artist : song.artist.name}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
+            </div>
           </div>
         )}
       </div>

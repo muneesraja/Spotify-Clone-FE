@@ -1,20 +1,19 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
+
+
 
 export const api = axios.create({
   baseURL: process.env.BASE_URL || 'http://localhost:3000',
   headers: {
     'Content-Type': 'application/json',
+    'Accept': 'application/json',
   },
+  withCredentials: true,
 });
 
-// Add request interceptor for JWT auth token
 api.interceptors.request.use((config) => {
-  // Check if we're in a browser environment
-  if (typeof window !== 'undefined') {
-    const token = localStorage.getItem('auth_token');
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
-  }
+  // Ensure withCredentials is always true
+  config.withCredentials = true;
   return config;
-}); 
+});
