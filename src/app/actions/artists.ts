@@ -8,7 +8,7 @@ const API_URL = process.env.BASE_URL || 'http://localhost:3000';
 
 export async function getAllArtists() {
   try {
-    const response = await fetch(`${API_URL}${endpoints.artists.list}`, {
+    const response = await fetch(API_URL + endpoints.artists.list, {
       cache: 'no-store',
     });
 
@@ -25,7 +25,7 @@ export async function getAllArtists() {
 
 export async function getFeaturedArtists() {
   try {
-    const response = await fetch(`${API_URL}${endpoints.artists.featured}`, {
+    const response = await fetch(API_URL + endpoints.artists.featured, {
       cache: 'no-store',
     });
 
@@ -47,7 +47,7 @@ export async function getArtistDetails(id: string): Promise<{ artist: Artist | n
   }
 
   try {
-    const response = await fetch(`${API_URL}${endpoints.artists.details(id)}`, {
+    const response = await fetch(API_URL + endpoints.artists.details(id), {
       cache: 'no-store',
       headers: {
         'Accept': 'application/json',

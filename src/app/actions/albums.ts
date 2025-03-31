@@ -8,7 +8,7 @@ const API_URL = process.env.BASE_URL || 'http://localhost:3000';
 
 export async function getAllAlbums() {
   try {
-    const response = await fetch(`${API_URL}${endpoints.albums.list}`, {
+    const response = await fetch(API_URL + endpoints.albums.list, {
       cache: 'no-store',
     });
 
@@ -25,7 +25,7 @@ export async function getAllAlbums() {
 
 export async function getFeaturedAlbums() {
   try {
-    const response = await fetch(`${API_URL}${endpoints.albums.featured}`, {
+    const response = await fetch(API_URL + endpoints.albums.featured, {
       cache: 'no-store',
     });
 
@@ -47,7 +47,7 @@ export async function getAlbumDetails(id: string): Promise<{ album: Album | null
   }
 
   try {
-    const response = await fetch(`${API_URL}${endpoints.albums.details(id)}`, {
+    const response = await fetch(API_URL + endpoints.albums.details(id), {
       cache: 'no-store',
       headers: {
         'Accept': 'application/json',
@@ -93,7 +93,7 @@ export async function getAlbumDetails(id: string): Promise<{ album: Album | null
 
 export async function playAlbum(albumId: string) {
   try {
-    const response = await fetch(`${API_URL}${endpoints.albums.details(albumId)}`, {
+    const response = await fetch(API_URL + endpoints.albums.details(albumId), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

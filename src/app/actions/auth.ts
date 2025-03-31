@@ -1,16 +1,17 @@
 'use server';
 
+import { endpoints } from '@/lib/api/endpoints';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
-const API_URL = process.env.BASE_URL || 'http://localhost:3000';
+  const API_URL = process.env.BASE_URL || 'http://localhost:3000';
 
 export async function login(prevState: unknown, formData: FormData) {
   const email = formData.get('email');
   const password = formData.get('password');
 
   try {
-    const response = await fetch(`${API_URL}/auth/login`, {
+    const response = await fetch(API_URL + endpoints.auth.login, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -51,7 +52,7 @@ export async function register(prevState: unknown, formData: FormData) {
   const password = formData.get('password');
 
   try {
-    const response = await fetch(`${API_URL}/auth/register`, {
+    const response = await fetch(API_URL + endpoints.auth.register, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

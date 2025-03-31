@@ -8,7 +8,7 @@ const API_URL = process.env.BASE_URL || 'http://localhost:3000';
 
 export async function getAllSongs() {
   try {
-    const response = await fetch(`${API_URL}${endpoints.songs.list}`, {
+    const response = await fetch(API_URL + endpoints.songs.list, {
       cache: 'no-store',
     });
 
@@ -25,7 +25,7 @@ export async function getAllSongs() {
 
 export async function getFeaturedSongs() {
   try {
-    const response = await fetch(`${API_URL}${endpoints.songs.featured}`, {
+    const response = await fetch(API_URL + endpoints.songs.featured, {
       cache: 'no-store',
     });
 
@@ -48,7 +48,7 @@ export async function playSong(songId: string) {
   }
 
   try {
-    const response = await fetch(`${API_URL}${endpoints.songs.play(songId)}`, {
+    const response = await fetch(API_URL + endpoints.songs.play(songId), {
       method: 'POST',
       cache: 'no-store',
       headers: {
