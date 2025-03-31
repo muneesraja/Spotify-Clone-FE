@@ -4,13 +4,14 @@ import { useState } from 'react';
 import Link from 'next/link';
 import type { Song } from '@/api-types/models/Song';
 import { LikeButton } from './LikeButton';
+import Image from 'next/image';
 
 interface SongProps {
   song: Song;
 }
 
 export function SongCard({ song }: SongProps) {
-  const [isHovered, setIsHovered] = useState(false);
+  const [, setIsHovered] = useState<boolean>(false);
   
   const artistId = typeof song.artist === 'string' ? null : song.artist?.id;
   const artistName = typeof song.artist === 'string' ? song.artist : song.artist?.name;
@@ -22,10 +23,12 @@ export function SongCard({ song }: SongProps) {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative mb-4 rounded-md overflow-hidden">
-        <img 
-          src={song.imageUrl || (typeof song.artist !== 'string' ? song.artist?.imageUrl : '')} 
+        <Image 
+          src={song.imageUrl || (typeof song.artist !== 'string' ? song.artist?.imageUrl : 'https://picsum.photos/160/160')} 
           alt={song.title} 
           className="w-full h-full aspect-square object-cover bg-neutral-700"
+          width={160}
+          height={160}
         />
         <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <LikeButton songId={song.id} className="bg-[#181818]/70 backdrop-blur-sm" />

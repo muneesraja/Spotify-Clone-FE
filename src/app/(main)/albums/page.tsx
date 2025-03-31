@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { AlbumList } from '@/components/albums/AlbumList';
 import { getAllAlbums } from '@/app/actions/albums';
+export const dynamic = 'force-dynamic';
 
 export default async function AlbumsPage() {
   const albums = await getAllAlbums();

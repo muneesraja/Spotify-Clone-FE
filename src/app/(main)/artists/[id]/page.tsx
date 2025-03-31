@@ -2,6 +2,8 @@ import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { ArtistAlbums } from '@/components/artists/ArtistAlbums';
 import { getArtistDetails } from '@/app/actions/artists';
+import Image from 'next/image';
+export const dynamic = 'force-dynamic';
 
 interface ArtistDetailsPageProps {
   params: Promise<{ id: string }>;
@@ -43,10 +45,12 @@ export default async function ArtistDetailsPage({ params }: ArtistDetailsPagePro
       }>
         <div className="flex gap-8 items-end">
           <div className="w-48 h-48 rounded-full overflow-hidden">
-            <img 
+            <Image 
               src={artist.imageUrl || 'https://picsum.photos/seed/artist/300/300'} 
               alt={artist.name}
               className="w-full h-full object-cover"
+              width={300}
+              height={300}
             />
           </div>
           <div>

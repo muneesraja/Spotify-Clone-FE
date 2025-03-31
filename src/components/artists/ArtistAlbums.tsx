@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import type { Artist } from '@/api-types/models/Artist';
 import type { Album } from '@/api-types/models/Album';
+import Image from 'next/image';
 
 interface ArtistAlbumsProps {
   artist: Artist;
@@ -57,10 +58,12 @@ export function ArtistAlbums({ artist, albums }: ArtistAlbumsProps) {
             className="group bg-[#282828] p-4 rounded-md hover:bg-[#333] transition-colors flex flex-col"
           >
             <div className="aspect-square mb-4 rounded-md overflow-hidden flex-shrink-0">
-              <img
+              <Image
                 src={album.imageUrl || 'https://picsum.photos/seed/album/300/300'}
                 alt={album.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                width={300}
+                height={300}
               />
             </div>
             <div className="mt-auto">

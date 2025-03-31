@@ -95,7 +95,7 @@ export function SearchResults() {
   const hasResults = mappedSongs.length > 0 || mappedAlbums.length > 0 || mappedArtists.length > 0;
 
   if (!hasResults) {
-    return <div className="text-center text-text-secondary p-4">No results found for "{query}".</div>;
+    return <div className="text-center text-text-secondary p-4">No results found for &quot;{query}&quot;.</div>;
   }
 
   return (

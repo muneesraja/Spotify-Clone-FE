@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { AlbumCardActions } from './AlbumCardActions';
 import type { Album } from '@/api-types/models/Album';
 import type { Artist } from '@/api-types/models/Artist';
+import Image from 'next/image';
 
 interface AlbumProps {
   album: Album & {
@@ -23,10 +24,12 @@ export function AlbumCard({ album }: AlbumProps) {
     >
       <Link href={`/albums/${album.id}`} className="block">
         <div className="relative mb-4 rounded-md overflow-hidden">
-          <img 
-            src={album.imageUrl} 
+          <Image 
+            src={album.imageUrl || 'https://picsum.photos/160/160'} 
             alt={album.title} 
             className="w-full h-full aspect-square object-cover"
+            width={160}
+            height={160}
           />
           <AlbumCardActions albumId={album.id} isHovered={isHovered} />
         </div>

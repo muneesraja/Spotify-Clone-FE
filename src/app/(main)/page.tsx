@@ -10,7 +10,7 @@ import type { Album } from "@/api-types/models/Album";
 import { SongCard } from "@/components/shared/SongCard";
 import { ArtistCard } from "@/components/shared/ArtistCard";
 import { AlbumCard } from "@/components/shared/AlbumCard";
-
+export const dynamic = 'force-dynamic';
 export default async function Home() {
   // Fetch data from the server
   const [trendingSongs, popularArtists, popularAlbums] = await Promise.all([

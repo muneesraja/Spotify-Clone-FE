@@ -1,6 +1,7 @@
 import { Suspense } from 'react';
 import { ArtistList } from '@/components/artists/ArtistList';
 import { getAllArtists } from '@/app/actions/artists';
+export const dynamic = 'force-dynamic';
 
 export default async function ArtistsPage() {
   const artists = await getAllArtists();

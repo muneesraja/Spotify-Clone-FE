@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { AlbumSongs } from '@/components/albums/AlbumSongs';
 import { getAlbumDetails } from '@/app/actions/albums';
-
+import Image from 'next/image';
+export const dynamic = 'force-dynamic';
 
 interface AlbumDetailsPageProps {
   params: Promise<{ id: string }>;
@@ -39,10 +40,12 @@ export default async function AlbumDetailsPage({params}: AlbumDetailsPageProps) 
       }>
         <div className="flex gap-8 items-end">
           <div className="w-48 h-48 rounded-md overflow-hidden">
-            <img 
+            <Image 
               src={album.imageUrl || 'https://picsum.photos/seed/album/300/300'} 
               alt={album.title}
               className="w-full h-full object-cover"
+              width={300}
+              height={300}
             />
           </div>
           <div>

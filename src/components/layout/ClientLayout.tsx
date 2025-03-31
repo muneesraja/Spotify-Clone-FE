@@ -7,7 +7,7 @@ interface ClientLayoutProps {
   isAuthenticated: boolean;
 }
 
-export function ClientLayout({ children, isAuthenticated }: ClientLayoutProps) {
+export function ClientLayout({ children }: ClientLayoutProps) {
   const pathname = usePathname();
   const isAuthPage = pathname === '/login' || pathname === '/register';
 

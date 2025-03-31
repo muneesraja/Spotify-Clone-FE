@@ -8,7 +8,19 @@ const nextConfig: NextConfig = {
         hostname: 'i.scdn.co',
         port: '',
         pathname: '/**', // Allow any path under this hostname
-      }
+      },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        port: '',
+        pathname: '/**', // Allow any path under this hostname
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.pravatar.cc',
+        port: '',
+        pathname: '/**', // Allow any path under this hostname
+      },
     ],
   },
   /* config options here */

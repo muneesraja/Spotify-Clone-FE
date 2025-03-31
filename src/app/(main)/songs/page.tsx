@@ -3,6 +3,7 @@ import { SongList } from '@/components/songs/SongList';
 import { getAllSongs } from '@/app/actions/songs';
 import type { Song } from '@/api-types/models/Song';
 import type { Artist } from '@/api-types/models/Artist';
+export const dynamic = 'force-dynamic';
 
 interface SongWithArtist extends Omit<Song, 'artist'> {
   artist: Artist;
