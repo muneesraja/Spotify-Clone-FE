@@ -43,4 +43,9 @@ export const songApi = {
     const response = await api.get(endpoints.users.likedSongs);
     return response.data;
   },
+
+  getSongDetails: async (id: string): Promise<Song> => {
+    const response = await api.get(endpoints.songs.play(id));
+    return response.data;
+  },
 }; 

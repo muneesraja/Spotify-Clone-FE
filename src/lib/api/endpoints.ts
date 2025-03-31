@@ -9,7 +9,7 @@ export const endpoints = {
     list: '/songs',
     featured: '/songs/featured',
     search: '/songs/search',
-    play: (id: string) => `/songs/${id}/play`,
+    play: (id: string) => `/songs/${id}`,
     like: (id: string) => `/songs/${id}/like`,
   },
   artists: {

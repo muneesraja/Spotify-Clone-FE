@@ -10,9 +10,3 @@ export const api = axios.create({
   },
   withCredentials: true,
 });
-
-api.interceptors.request.use((config) => {
-  // Ensure withCredentials is always true
-  config.withCredentials = true;
-  return config;
-});

@@ -5,6 +5,8 @@ import Link from 'next/link';
 import type { Song } from '@/api-types/models/Song';
 import { LikeButton } from './LikeButton';
 import Image from 'next/image';
+import { PlayIcon } from '@heroicons/react/24/outline';
+import { usePlayerStore } from '@/store/playerStore';
 
 interface SongProps {
   song: Song;
@@ -12,6 +14,7 @@ interface SongProps {
 
 export function SongCard({ song }: SongProps) {
   const [, setIsHovered] = useState<boolean>(false);
+  const playSong = usePlayerStore((state) => state.playSong);
   
   const artistId = typeof song.artist === 'string' ? null : song.artist?.id;
   const artistName = typeof song.artist === 'string' ? song.artist : song.artist?.name;
@@ -31,6 +34,12 @@ export function SongCard({ song }: SongProps) {
           height={160}
         />
         <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <button
+            onClick={() => playSong(song.id)}
+            className="text-white hover:text-gray-300 transition-colors"
+          >
+            <PlayIcon className="w-5 h-5" />
+          </button>
           <LikeButton songId={song.id} className="bg-[#181818]/70 backdrop-blur-sm" />
         </div>
       </div>

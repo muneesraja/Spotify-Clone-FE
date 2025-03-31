@@ -5,6 +5,7 @@ import { Sidebar } from '@/components/layout/Sidebar';
 import { Header } from '@/components/layout/Header';
 import { User } from '@/api-types';
 import { useLikedSongsStore } from '@/store/likedSongsStore'; // Import the store
+import PlayerContainer from '../player/PlayerContainer';
 
 interface MainLayoutProps {
   children: React.ReactNode;
@@ -15,9 +16,10 @@ interface MainLayoutProps {
 export function MainLayout({ children, user, isAuthenticated }: MainLayoutProps) {
   // State for mobile sidebar visibility
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
 
   // Fetch liked songs when the user is authenticated
-  const fetchLikedSongs = useLikedSongsStore((state) => state.fetchLikedSongs);
+  const { fetchLikedSongs } = useLikedSongsStore();
   useEffect(() => {
     if (isAuthenticated) {
       console.log('MainLayout: Authenticated, fetching liked songs...');
@@ -46,13 +48,14 @@ export function MainLayout({ children, user, isAuthenticated }: MainLayoutProps)
             user={user} 
             isAuthenticated={isAuthenticated} 
             onMenuToggle={toggleMobileNav} // Pass toggle function
-           />
+          />
           <div className="flex-1 overflow-y-auto px-4 sm:px-6 lg:px-8 py-8">
              <div className="max-w-7xl mx-auto">
                 {children}
              </div>
           </div>
         </main>
+        <PlayerContainer />
          {/* Optional: Overlay for closing mobile nav when clicking outside */}
          {isMobileNavOpen && (
            <div 

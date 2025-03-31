@@ -7,6 +7,8 @@ import type { Artist } from '@/api-types/models/Artist';
 import { formatDuration } from '@/lib/utils/formatDuration';
 import { playSong } from '@/app/actions/songs';
 import { LikeButton } from './LikeButton';
+import { PlayIcon } from '@heroicons/react/24/outline';
+import { usePlayerStore } from '@/store/playerStore';
 
 interface SongListProps {
   songs?: Song[];
@@ -23,6 +25,7 @@ export default function SongList({
 }: SongListProps) {
   const router = useRouter();
   const [sortBy, setSortBy] = useState<'title' | 'artist' | 'recent'>('title');
+  const playSong = usePlayerStore((state) => state.playSong);
 
   // Sort songs based on the selected criteria
   const sortedSongs = [...songs].sort((a, b) => {
@@ -37,11 +40,8 @@ export default function SongList({
     }
   });
 
-  const handlePlaySong = async (songId: string) => {
-    const result = await playSong(songId);
-    if (!result.success && result.error === 'Authentication required') {
-      router.push('/login');
-    }
+  const handlePlaySong = (songId: string) => {
+    playSong(songId);
   };
 
   if (songs.length === 0) {
@@ -99,15 +99,13 @@ export default function SongList({
                   {formatDuration(song.duration || 0)}
                 </div>
                 <div className="w-20 flex justify-end gap-2">
-                  <LikeButton songId={song.id} />
                   <button
                     onClick={() => handlePlaySong(song.id)}
                     className="p-2 rounded-full hover:bg-[#333] text-text-secondary hover:text-white transition-colors"
                   >
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M5 3L12 8L5 13V3Z" fill="currentColor"/>
-                    </svg>
+                    <PlayIcon className="w-5 h-5" />
                   </button>
+                  <LikeButton songId={song.id} />
                 </div>
               </div>
             );
